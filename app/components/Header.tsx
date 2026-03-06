@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#f1f5f4] border-b border-stone-200 px-6 py-3">
+   <header className="fixed w-full top-0 z-50 bg-[#f1f5f4] border-b border-stone-200 px-6 py-3">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         
         {/* Lado Esquerdo: Perfil Samuel */}
