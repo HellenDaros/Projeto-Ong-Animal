@@ -4,14 +4,24 @@ import React from 'react';
 import { Mail, Lock, ArrowRight, PawPrint } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useAuth, Usuario } from '../context/AuthContext';
 
 export default function LoginPage() {
     const router = useRouter();
+    const {login} = useAuth();
 
     const handleLogin = async (formData:FormData) =>{
 
         const email = formData.get("email")
         const senha = formData.get("senha")
+
+        try{
+          const usuarioMock = new Usuario(1,"Hellen Daros")
+          const tokenMoken = "fushdddddfusjfuidbjcvjj"
+          login(usuarioMock,tokenMoken)
+        }catch(error){
+          alert("Erro ao entrar no sistema")
+        }
 
         console.log(`Autenticas com email: ${email}`)
 

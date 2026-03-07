@@ -1,4 +1,9 @@
+'use client'
+import { useAuth } from "../context/AuthContext";
+
 export default function Header() {
+
+  const{usuario, logout} = useAuth();
   return (
    <header className="fixed w-full top-0 z-50 bg-[#f1f5f4] border-b border-stone-200 px-6 py-3">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -24,7 +29,7 @@ export default function Header() {
           </div>
           <div className="flex flex-col">
             <span className="text-slate-800 font-black text-base tracking-tight leading-tight">
-              Samuel Matos
+              {usuario?.name.toLocaleUpperCase()||"Usuario indefinido"}
             </span>
             <span className="text-teal-600 text-[10px] font-bold uppercase tracking-wider">
               Painel ONG
@@ -33,7 +38,7 @@ export default function Header() {
         </div>
 
         {/* Lado Direito: Botão Sair Estilo "Acesso ONG" */}
-        <button className="group relative flex items-center">
+        <button type="button" className="group relative flex items-center" onClick={logout}>
           {/* Fundo Slate, muda para Laranja (orange-500) no Hover */}
           <div className="flex items-center gap-2 bg-[#1e293b] hover:bg-orange-500 text-white pl-5 pr-8 py-2.5 rounded-full font-bold transition-all duration-300 shadow-lg z-10">
             {/* Ícone de Logout SVG (w3.org) */}
