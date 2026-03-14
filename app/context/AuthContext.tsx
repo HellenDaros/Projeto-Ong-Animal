@@ -8,7 +8,9 @@ import { useRouter } from "next/navigation";
 export class Usuario{
     constructor(
         public codigo: number,
-        public name: string
+        public name: string,
+        public cpf: string,
+        public ativo: boolean
     ){}
 }
 

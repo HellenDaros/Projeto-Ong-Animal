@@ -16,7 +16,7 @@ export default function LoginPage() {
         const senha = formData.get("senha")
 
         try{
-          const usuarioMock = new Usuario(1,"Hellen Daros")
+          const usuarioMock = new Usuario(1,"Hellen Daros","365489531",true)
           const tokenMoken = "fushdddddfusjfuidbjcvjj"
           login(usuarioMock,tokenMoken)
         }catch(error){

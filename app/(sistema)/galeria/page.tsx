@@ -23,11 +23,14 @@ export default function GaleriaPage() {
           <p className="text-slate-500 text-sm font-medium">Gerencie os animais disponíveis para adoção.</p>
         </div>
 
+        <Link href="/cadastrar-animal">
         <button className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-2xl font-black transition-all shadow-lg shadow-orange-100 active:scale-95">
           <Plus size={20} strokeWidth={3} />
           Cadastrar Animal
         </button>
+        </Link>
       </div>
+      
 
       {/* Grid seguindo o estilo da sua imagem */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

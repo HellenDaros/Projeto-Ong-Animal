@@ -30,7 +30,7 @@ export default function Sidebar() {
     { name: "Home", href: "/home", icon: LayoutDashboard },
     { name: "Usuários", href: "/usuarios", icon: Users },
     { name: "Resgates", href: "/resgates", icon: Heart },
-    { name: "Configurações", href: "/configuracoes", icon: Settings },
+    { name: "Cadastro Animal", href: "/cadastro-animal", icon: Settings },
   ];
 
   return (
