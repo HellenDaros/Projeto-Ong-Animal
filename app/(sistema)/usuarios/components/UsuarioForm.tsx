@@ -36,7 +36,7 @@ const handleSalvar = async (formData: FormData) => {
          if(dadosResult.status !== 200){
           return;
          }
-  alert("Usuário salvo com sucesso!" + dadosResult.data)
+  alert(dadosResult.data)
     }else{
 
      var dadosResult = await axios.post<number>('http://localhost:8080/usuarios',usuario);

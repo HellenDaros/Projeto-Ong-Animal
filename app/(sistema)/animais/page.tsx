@@ -107,9 +107,9 @@ export default function Animais() {
                                         <span className={`inline-flex items-center px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tighter ${
                                             animal.statusAnimal === 'DISPONIVEL'
                                                 ? 'bg-teal-50 text-teal-600' 
-                                                : 'bg-amber-50 text-amber-600'
+                                                : 'bg-red-50 text-red-600'
                                         }`}>
-                                            <span className={`w-1.5 h-1.5 rounded-full mr-2 ${animal.statusAnimal === 'DISPONIVEL' ? 'bg-teal-500' : 'bg-amber-500'}`} />
+                                            <span className={`w-1.5 h-1.5 rounded-full mr-2 ${animal.statusAnimal === 'DISPONIVEL' ? 'bg-teal-500' : 'bg-red-500'}`} />
                                             {animal.statusAnimal}
                                         </span>
                                     </td>
@@ -127,7 +127,7 @@ export default function Animais() {
                                             
                                             <button 
                                                 onClick={() => handleAlterarStatus(animal)} 
-                                                className="p-2 text-slate-400 hover:text-amber-500 hover:bg-amber-50 rounded-xl transition-all"
+                                                className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-xl transition-all"
                                                 title="Alterar Status"
                                             >
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">

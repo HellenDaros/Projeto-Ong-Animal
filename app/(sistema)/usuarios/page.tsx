@@ -29,20 +29,32 @@ export default function Usuarios(){
 
     const handleAlertStatus = async(usuario:Usuario) => {
         try{
-          var novoStatus = {};
-          if(usuario.status==="ATIVO"){
-            novoStatus = {status: "INATIVO"}
-          }else{
-            novoStatus = { status: "ATIVO"}
-          }
+          // var novoStatus = {};
+          // if(usuario.status==="ATIVO"){
+          //   novoStatus = {status: "INATIVO"}
+          // }else{
+          //   novoStatus = { status: "ATIVO"}
+          // }
+          //    var dadosResult = await axios.put<number>('http://localhost:8080/usuarios/' +usuario.id+'/AlterarStatus', novoStatus);
 
-             var dadosResult = await axios.put<number>('http://localhost:8080/usuarios/' +usuario.id+'/AlterarStatus', novoStatus);
+          const novoStatusValor = usuario.status === "ATIVO" ? "INATIVO" : "ATIVO";
+          const response = await axios.put(`http://localhost:8080/usuarios/${usuario.id}/AlterarStatus`, { status: novoStatusValor });
 
-         if(dadosResult.status !== 200){
+         if(response.status !== 200){
           return;
          }
-        alert("Usuário salvo com sucesso!" + dadosResult.data)
-        } catch(error){
+         if (response.status === 200) {
+              alert(response.data)
+              console.log(response.data)
+            setUsuarios(prevUsuarios => 
+                prevUsuarios.map(u => 
+                    u.id === usuario.id ? { ...u, status: novoStatusValor } : u
+                )
+            );
+        }
+    }
+
+        catch(error){
             alert("Erro ao alterar status do usuário!")
         }
     }
@@ -137,7 +149,7 @@ export default function Usuarios(){
                     ? 'bg-teal-50 text-teal-600' 
                     : 'bg-red-50 text-red-500'
                 }`}>
-                  <span className={`w-1.5 h-1.5 rounded-full mr-2 ${usuario.status ? 'bg-teal-500' : 'bg-red-500'}`} />
+                  <span className={`w-1.5 h-1.5 rounded-full mr-2 ${usuario.status === 'ATIVO' ? 'bg-teal-500' : 'bg-red-500'}`} />
                   {usuario.status === 'ATIVO' ? 'Ativo' : 'Inativo'}
                 </span>
               </td>

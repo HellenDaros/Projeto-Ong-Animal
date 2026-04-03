@@ -26,7 +26,6 @@ export default function LoginPage() {
       //   },
       //   body: JSON.stringify({email:email, senha: senha})
       // });
-      debugger;
       var loginResult = await axios.post<LoginResponse>(
         "http://localhost:8080/auth/login",
         { email: email, senha: senha },

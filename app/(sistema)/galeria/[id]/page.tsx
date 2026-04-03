@@ -72,7 +72,7 @@ export default function DetalhesAnimalPage() {
           {/* Lado Esquerdo: Imagem */}
           <div className="w-full md:w-1/2 h-[400px] md:h-auto relative">
             <img 
-              src={animal.fotoUrl} 
+              src={animal.urlFoto} 
               alt={animal.nameAnimal} 
               className="w-full h-full object-cover"
             />
