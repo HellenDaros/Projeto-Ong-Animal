@@ -48,9 +48,7 @@ export default function LoginPage() {
   };
 
   return (
-    /* h-screen garante que o fundo cubra a tela toda sem Header/Footer */
     <div className="min-h-screen w-full bg-stone-50 flex flex-col justify-center items-center p-6">
-      {/* Branding - Logo acima do card */}
       <div className="flex items-center gap-2 font-black text-teal-600 text-3xl mb-8 pointer-events-none animate-in fade-in slide-in-from-top-4 duration-700">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +66,6 @@ export default function LoginPage() {
         </span>
       </div>
 
-      {/* Card de Login */}
       <div className="w-full max-w-[450px] bg-white rounded-[3rem] shadow-2xl shadow-stone-200/60 border border-stone-100 p-8 md:p-12 animate-in fade-in zoom-in duration-500">
         <div className="text-center mb-10">
           <h1 className="text-3xl font-black text-slate-800 tracking-tight">
@@ -80,7 +77,6 @@ export default function LoginPage() {
         </div>
 
         <form action={handleLogin} className="space-y-6">
-          {/* Campo E-mail */}
           <div className="space-y-2">
             <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">
               E-mail
@@ -105,7 +101,6 @@ export default function LoginPage() {
               <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
                 Senha
               </label>
-              {/* <button type="button" className="text-[10px] font-black uppercase text-teal-600 hover:text-orange-500 transition-colors">Esqueceu?</button> */}
             </div>
             <div className="relative group">
               <input
@@ -134,8 +129,7 @@ export default function LoginPage() {
           </button>
         </form>
 
-        {/* Rodapé do Card */}
-        <div className="mt-10 pt-8 border-t border-stone-100 text-center">
+        {/* <div className="mt-10 pt-8 border-t border-stone-100 text-center">
           <p className="text-slate-500 text-xs font-bold uppercase tracking-tight">
             Ainda não tem conta?
             <Link
@@ -145,7 +139,7 @@ export default function LoginPage() {
               Cadastre-se agora
             </Link>
           </p>
-        </div>
+        </div> */}
       </div>
 
       {/* Footerzinho discreto já que não tem o global */}
